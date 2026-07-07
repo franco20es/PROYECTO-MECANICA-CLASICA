@@ -260,14 +260,14 @@ export default function App() {
   }, [pos, v, track, g]);
 
   let section = "➡ Cadena";
-  if (pos.x > 12 && pos.x <= 24) section = "⛰ Lift Hill";
-  else if (pos.x > 24 && pos.x <= 36) section = "🔽 First Drop";
+  if (pos.x > 12 && pos.x <= 24) section = " Lift Hill";
+  else if (pos.x > 24 && pos.x <= 36) section = " First Drop";
   else if (pos.x > 36 && pos.x <= 50) section = "➡ Transición";
-  else if (pos.x > 44 && pos.x <= 56 && pos.y > 0.5) section = "🔄 Looping";
-  else if (pos.x > 56 && pos.x <= 80) section = "🐫 Camelback";
-  else if (pos.x > 80 && pos.x <= 106) section = "🐇 Bunny Hops";
-  else if (pos.x > 106) section = "🛑 Frenado";
-  if (done) section = "✅ ¡Recorrido completado!";
+  else if (pos.x > 44 && pos.x <= 56 && pos.y > 0.5) section = " Looping";
+  else if (pos.x > 56 && pos.x <= 80) section = " Camelback";
+  else if (pos.x > 80 && pos.x <= 106) section = " Bunny Hops";
+  else if (pos.x > 106) section = " Frenado";
+  if (done) section = " ¡Recorrido completado!";
 
   // SVG coordinates
   const W = 860, H_ = 430, pL = 30, pR = 10, pT = 25, pB = 30;
@@ -318,10 +318,10 @@ export default function App() {
       {/* Header */}
       <div style={{ padding: "10px 14px 4px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" }}>
         <div>
-          <h1 style={{ margin: 0, fontSize: 17, fontWeight: 800, background: "linear-gradient(90deg,#ff4466,#ffaa33,#44aaff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-            🎢 Simulador Montaña Rusa
+          <h1 style={{ margin: 0, fontSize: 26, fontWeight: 800, background: "linear-gradient(90deg,#ff4466,#ffaa33,#44aaff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+             Simulador Montaña Rusa
           </h1>
-          <p style={{ margin: 0, fontSize: 10, color: "#445" }}>Mecánica Clásica — UTP Ica 2026 — Grupo N°9</p>
+          <p style={{ margin: 0, fontSize: 10, color: "#445" }}>Mecánica Clásica </p>
         </div>
         <button onClick={() => setPanel(p => !p)} style={{ ...btn, background: "#12122a", color: "#7af", padding: "4px 10px", fontSize: 10, border: "1px solid #222" }}>
           {panel ? "Ocultar ⚙" : "⚙ Config"}
@@ -409,7 +409,7 @@ export default function App() {
               {done && (
                 <g>
                   <rect x={W/2-80} y={H_/2-25} width={160} height={50} rx={10} fill="#000" opacity={0.7}/>
-                  <text x={W/2} y={H_/2+5} fill="#4f4" fontSize={14} fontWeight="800" textAnchor="middle" fontFamily="monospace">✅ ¡COMPLETADO!</text>
+                  <text x={W/2} y={H_/2+5} fill="#4f4" fontSize={14} fontWeight="800" textAnchor="middle" fontFamily="monospace"> ¡COMPLETADO!</text>
                 </g>
               )}
             </svg>
@@ -492,8 +492,8 @@ export default function App() {
               ))}
             </div>
             <div style={{ background: "#0a0a16", borderRadius: 9, padding: 10, border: "1px solid #141428" }}>
-              <h3 style={{ margin: "0 0 5px", fontSize: 11, color: "#6f6", fontWeight: 700 }}>🌍 Gravedad</h3>
-              {[{n:"🌎 Tierra",g:9.81},{n:"🌙 Luna",g:1.62},{n:"🔴 Marte",g:3.72},{n:"🪐 Júpiter",g:24.79}].map(pr => (
+              <h3 style={{ margin: "0 0 5px", fontSize: 11, color: "#6f6", fontWeight: 700 }}> Gravedad</h3>
+              {[{n:" Tierra",g:9.81},{n:" Luna",g:1.62},{n:" Marte",g:3.72},{n:" Júpiter",g:24.79}].map(pr => (
                 <button key={pr.n} onClick={() => updateParam("gravity",pr.g)}
                   style={{ ...btn, display:"block", width:"100%", marginBottom:2, fontSize:10, padding:"4px 7px", textAlign:"left",
                     background: params.gravity===pr.g?"#12201a":"#08080f", color: params.gravity===pr.g?"#6f6":"#556",
@@ -503,7 +503,7 @@ export default function App() {
               ))}
             </div>
             <div style={{ background: "#0a0a16", borderRadius: 9, padding: 10, border: "1px solid #141428" }}>
-              <h3 style={{ margin: "0 0 4px", fontSize: 11, color: "#fa6", fontWeight: 700 }}>📐 Modelo</h3>
+              <h3 style={{ margin: "0 0 4px", fontSize: 11, color: "#fa6", fontWeight: 700 }}> Modelo</h3>
               <div style={{ fontSize: 9, color: "#556", lineHeight: 1.9, fontFamily: "monospace" }}>
                 Ec = ½mv²<br/>Ep = mgh<br/>Wf = μ·N·d<br/>
                 Ei = Ef + Wf<br/>
