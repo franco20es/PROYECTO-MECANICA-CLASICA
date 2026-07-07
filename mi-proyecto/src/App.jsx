@@ -407,7 +407,7 @@ export default function App() {
             Simulador Montana Rusa 
           </h1>
           <p style={{ margin: "2px 0 0", fontSize: 10, color: "#445", letterSpacing: 0.5 }}>
-            Mecanica Clasica UTP-ICA 2026 
+            Mecanica Clasica UTP-ICA 2026.
           </p>
         </div>
         <button onClick={() => setPanel(p => !p)} style={{ ...btnSt, background: panel ? "rgba(68,102,170,0.2)" : "rgba(18,18,42,0.8)", color: panel ? "#7af" : "#556", padding: "6px 14px", fontSize: 11, border: "1px solid rgba(40,40,80,0.5)" }}>
